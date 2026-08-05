@@ -101,39 +101,42 @@
   }
 
   .title-row {
-    display: flex;
-    align-items: center;
+    display: inline-flex;
     justify-content: center;
-    gap: 8px;
+    align-items: center;
+    gap: 0.25rem;
+    width: 100%;
   }
 
   .stripes {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 40px;
+    align-self: stretch;
   }
+
+  .stripes.right { justify-content: end; align-items: end; }
+  .stripes.left { justify-content: start; align-items: start; }
 
   .stripes span {
     display: block;
-    height: 13px;
-    background: var(--red);
-    box-shadow: 0 4px 0 var(--shadow);
+    flex: 1;
+    background-color: #852727;
+    box-shadow: 0 0.25rem #000;
   }
 
-  .stripes.left span:nth-child(1) { width: 46px; align-self: flex-end; }
-  .stripes.left span:nth-child(2) { width: 30px; align-self: flex-end; }
-  .stripes.left span:nth-child(3) { width: 16px; align-self: flex-end; }
-
-  .stripes.right span:nth-child(1) { width: 46px; }
-  .stripes.right span:nth-child(2) { width: 30px; }
-  .stripes.right span:nth-child(3) { width: 16px; }
+  .stripes span:nth-child(1) { width: 100%; }
+  .stripes span:nth-child(2) { width: 66%; }
+  .stripes span:nth-child(3) { width: 33%; }
 
   h1 {
     font-family: "Minecraft", "Mojangles", monospace;
-    font-size: clamp(32px, 8vw, 56px);
+    font-size: clamp(2.7em, 7vw, 6em);
     line-height: 1;
     margin: 0;
-    text-shadow: 0 4px 0 var(--shadow);
+    text-shadow: 0 0.25rem #000;
   }
 
   p.tagline {
@@ -194,9 +197,9 @@
 
 <main>
   <div class="title-row">
-    <div class="stripes left"><span></span><span></span><span></span></div>
-    <h1>BedrockX</h1>
     <div class="stripes right"><span></span><span></span><span></span></div>
+    <h1>BedrockX</h1>
+    <div class="stripes left"><span></span><span></span><span></span></div>
   </div>
   <p class="tagline">
     The most powerful and customizable texture pack for Minecraft Bedrock Edition.
