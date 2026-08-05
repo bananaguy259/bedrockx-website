@@ -36,9 +36,12 @@
   :root{
     --bg: #1e1e1f;
     --bg-panel: #2f2f30;
+    --header-bg: #e6e8eb;
+    --header-text: #1e1e1f;
     --text: #ffffff;
     --text-dim: #d0d1d4;
     --red: #b73737;
+    --shadow: #1a1a1a;
   }
 
   * { box-sizing: border-box; }
@@ -63,8 +66,8 @@
     align-items: center;
     gap: 12px;
     padding: 14px 20px;
-    background: var(--bg-panel);
-    border-bottom: 1px solid #3c3d3e;
+    background: var(--header-bg);
+    border-bottom: 3px solid #b1b2b5;
   }
 
   header img {
@@ -77,7 +80,7 @@
     font-family: "Minecraft", "Mojangles", monospace;
     font-size: 22px;
     letter-spacing: 0.5px;
-    text-shadow: 2px 2px 0 var(--red);
+    color: var(--header-text);
   }
 
   main {
@@ -90,17 +93,44 @@
     padding: 60px 20px;
     gap: 24px;
     background-image:
-      linear-gradient(rgba(30,30,31,0.35), rgba(30,30,31,0.75)),
+      linear-gradient(rgba(20,20,25,0.4), rgba(20,20,25,0.78)),
       url("images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
   }
 
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .stripes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stripes span {
+    display: block;
+    height: 8px;
+    background: var(--red);
+  }
+
+  .stripes.left span:nth-child(1) { width: 46px; align-self: flex-end; }
+  .stripes.left span:nth-child(2) { width: 30px; align-self: flex-end; }
+  .stripes.left span:nth-child(3) { width: 16px; align-self: flex-end; }
+
+  .stripes.right span:nth-child(1) { width: 46px; }
+  .stripes.right span:nth-child(2) { width: 30px; }
+  .stripes.right span:nth-child(3) { width: 16px; }
+
   h1 {
     font-family: "Minecraft", "Mojangles", monospace;
     font-size: clamp(32px, 8vw, 56px);
     margin: 0;
-    text-shadow: 4px 4px 0 var(--red);
+    text-shadow: 0 4px 0 var(--shadow);
   }
 
   p.tagline {
@@ -160,7 +190,11 @@
 </header>
 
 <main>
-  <h1>BedrockX</h1>
+  <div class="title-row">
+    <div class="stripes left"><span></span><span></span><span></span></div>
+    <h1>BedrockX</h1>
+    <div class="stripes right"><span></span><span></span><span></span></div>
+  </div>
   <p class="tagline">
     The most powerful and customizable texture pack for Minecraft Bedrock Edition.
   </p>
