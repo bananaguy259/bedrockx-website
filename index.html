@@ -102,20 +102,20 @@
 
   .title-row {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 40px;
+    gap: 16px;
   }
 
   .stripes {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    justify-content: space-between;
   }
 
   .stripes span {
     display: block;
-    height: 9px;
+    height: 16px;
     background: var(--red);
     box-shadow: 0 4px 0 var(--shadow);
   }
@@ -131,6 +131,7 @@
   h1 {
     font-family: "Minecraft", "Mojangles", monospace;
     font-size: clamp(32px, 8vw, 56px);
+    line-height: 1;
     margin: 0;
     text-shadow: 0 4px 0 var(--shadow);
   }
