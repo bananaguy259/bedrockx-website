@@ -71,15 +71,15 @@
   }
 
   header img {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
   }
 
   header span {
     font-family: "Minecraft", "Mojangles", monospace;
-    font-size: 22px;
-    letter-spacing: 0.5px;
+    font-size: 38px;
+    letter-spacing: -1px;
     color: var(--header-text);
   }
 
@@ -93,7 +93,7 @@
     padding: 60px 20px;
     gap: 24px;
     background-image:
-      linear-gradient(rgba(20,20,25,0.15), rgba(20,20,25,0.45)),
+      linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.3)),
       url("images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -109,22 +109,34 @@
   .stripes {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
   }
 
   .stripes span {
     display: block;
-    height: 8px;
+    height: 9px;
     background: var(--red);
   }
 
   .stripes.left span:nth-child(1) { width: 46px; align-self: flex-end; }
-  .stripes.left span:nth-child(2) { width: 30px; align-self: flex-end; }
-  .stripes.left span:nth-child(3) { width: 16px; align-self: flex-end; }
+  .stripes.left span:nth-child(2) {
+    width: 30px; align-self: flex-end;
+    background: linear-gradient(to right, var(--red) 0 75%, var(--shadow) 75% 100%);
+  }
+  .stripes.left span:nth-child(3) {
+    width: 16px; align-self: flex-end;
+    background: linear-gradient(to right, var(--red) 0 25%, var(--shadow) 25% 100%);
+  }
 
   .stripes.right span:nth-child(1) { width: 46px; }
-  .stripes.right span:nth-child(2) { width: 30px; }
-  .stripes.right span:nth-child(3) { width: 16px; }
+  .stripes.right span:nth-child(2) {
+    width: 30px;
+    background: linear-gradient(to left, var(--red) 0 75%, var(--shadow) 75% 100%);
+  }
+  .stripes.right span:nth-child(3) {
+    width: 16px;
+    background: linear-gradient(to left, var(--red) 0 25%, var(--shadow) 25% 100%);
+  }
 
   h1 {
     font-family: "Minecraft", "Mojangles", monospace;
